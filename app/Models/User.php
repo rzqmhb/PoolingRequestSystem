@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -13,14 +14,21 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'request_approvers';
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'user_name',
+        'user_email',
+        'user_password',
     ];
 
     /**
@@ -29,7 +37,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'password',
+        'user_password',
         'remember_token',
     ];
 
@@ -39,6 +47,22 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        // 'email_verified_at' => 'datetime',
     ];
+
+    public function requestApprover1() : HasMany {
+        return $this->hasMany(RequestApprover::class, 'approver1_id');
+    }
+
+    public function requestApprover2() : HasMany {
+        return $this->hasMany(RequestApprover::class, 'approver2_id');
+    }
+
+    public function requestApprover() {
+        return $this->requestApprover1()->merge($this->requestApprover2());
+    }
+
+    public function isAdmin() : bool {
+        return $this->where('user_role', 'admin')->exists();
+    }
 }
