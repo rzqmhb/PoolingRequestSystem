@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('request_approvers', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('approver1_id')->constrained(
+                table: 'users', indexName: 'fk1'
+            );
+            $table->foreignId('approver2_id')->constrained(
+                table: 'users', indexName: 'fk2'
+            );
+            $table->enum('approver1_status', ['pending', 'accepted', 'declined'])->default('pending');
+            $table->enum('approver2_status', ['pending', 'accepted', 'declined'])->default('pending');
             $table->timestamps();
         });
     }

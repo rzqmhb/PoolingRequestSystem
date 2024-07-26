@@ -12,7 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id()->uniqid;
+            $table->id();
+            $table->string('user_name');
+            $table->string('user_email')->unique();
+            $table->string('user_password');
+            $table->enum('user_role', ['admin', 'pengawas_pool']);
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 

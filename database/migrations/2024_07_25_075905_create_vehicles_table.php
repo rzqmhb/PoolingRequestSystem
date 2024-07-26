@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
+            $table->string('vehicle_name');
+            $table->enum('vehicle_type', ['Angkutan Orang', 'Angkutan Barang']);
             $table->timestamps();
         });
     }

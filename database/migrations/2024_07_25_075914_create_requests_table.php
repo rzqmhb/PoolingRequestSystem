@@ -13,6 +13,17 @@ return new class extends Migration
     {
         Schema::create('requests', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('vehicle_id')->constrained(
+                table: 'vehicles', indexName: 'fk3'
+            );
+            $table->foreignId('approvers_id')->constrained(
+                table: 'request_approvers', indexName: 'fk4'
+            );
+            $table->string('driver_name');
+            $table->double('fuel_estimation');
+            $table->date('start_date');
+            $table->date('end_date');
+            $table->enum('request_status', ['pending', 'single approval', 'approved', 'declined'])->default('pending');
             $table->timestamps();
         });
     }
