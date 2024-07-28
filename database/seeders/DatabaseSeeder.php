@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             VehicleSeeder::class,
             RequestApproverSeeder::class,
             RequestSeeder::class,
+            ActivityLogsSeeder::class,
         ]);
     }
 }

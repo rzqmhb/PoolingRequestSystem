@@ -38,6 +38,42 @@ class RequestApproverSeeder extends Seeder
                 'approver1_status' => 'pending',
                 'approver2_status' => 'pending',
             ],
+            [
+                'approver1_id' => 4,
+                'approver2_id' => 2,
+                'approver1_status' => 'accepted',
+                'approver2_status' => 'accepted',
+            ],
+            [
+                'approver1_id' => 4,
+                'approver2_id' => 3,
+                'approver1_status' => 'accepted',
+                'approver2_status' => 'accepted',
+            ],
+            [
+                'approver1_id' => 3,
+                'approver2_id' => 2,
+                'approver1_status' => 'accepted',
+                'approver2_status' => 'accepted',
+            ],
+            [
+                'approver1_id' => 3,
+                'approver2_id' => 4,
+                'approver1_status' => 'accepted',
+                'approver2_status' => 'accepted',
+            ],
+            [
+                'approver1_id' => 2,
+                'approver2_id' => 3,
+                'approver1_status' => 'accepted',
+                'approver2_status' => 'accepted',
+            ],
+            [
+                'approver1_id' => 2,
+                'approver2_id' => 4,
+                'approver1_status' => 'accepted',
+                'approver2_status' => 'accepted',
+            ],
         ];
 
         foreach ($request_approvers as $request_approver) {

@@ -18,7 +18,7 @@ class User extends Authenticatable
      *
      * @var string
      */
-    protected $table = 'request_approvers';
+    protected $table = 'users';
 
     /**
      * The attributes that are mass assignable.
@@ -50,6 +50,11 @@ class User extends Authenticatable
         // 'email_verified_at' => 'datetime',
     ];
 
+    public function getAuthPassword()
+    {
+        return $this->user_password;
+    }
+
     public function requestApprover1() : HasMany {
         return $this->hasMany(RequestApprover::class, 'approver1_id');
     }
@@ -62,7 +67,15 @@ class User extends Authenticatable
         return $this->requestApprover1()->merge($this->requestApprover2());
     }
 
+    public function activityLogs() {
+        return $this->hasMany(ActivityLogs::class,'user_id');
+    }
+
     public function isAdmin() : bool {
-        return $this->where('user_role', 'admin')->exists();
+        return $this->user_role == 'admin';
+    }
+
+    public function isApprover() : bool {
+        return $this->user_role != 'admin';
     }
 }
