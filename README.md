@@ -51,6 +51,38 @@ Project ini merupakan tahapan Technical Test dari proses seleksi Magang Fullstac
 
 ## How To Use
 
+1. Jalankan command ini pada terminal yang dapat mejalankan perintah git di direktori yang Anda inginkan.
+   ```git clone https://github.com/rzqmhb/PoolingRequestSystem.git```
+2. Kemudian jalankan command ini.
+   ```cd PoolingRequestSystem```
+3. Instal dependency yang idperlukan oleh sistem menggunakan.
+   ```composer install```
+4. Buat sebuah copy dari file .env.example dengan command.
+   ```cp .env.example .env```
+5. Isilah file .env dengan informasi yang sesuai dengan database yang Anda miliki.
+6. Buat aplication key menggunakan command.
+   ```php artisan key:generate```
+7. Jalankan aplikasi web sistem menggunakan command.
+   ```php artisan serve```
+
+### Email dan Password Akun
+
+#### Admin
+
+1. Email: sujatmiko@domain.com
+   Password: sujatmiko111
+
+#### Approver
+
+1. Email: budi@domain.com
+   Password: budi111
+   <br>
+2. Email: adam@domain.com
+   Password: adam111
+   <br>
+3. Email: aryo@domain.com
+   Password: aryo111
+
 <p align="right">(<a href="#readme-top" style="color: black;">back to top</a>)</p>
 
 
