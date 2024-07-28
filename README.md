@@ -38,6 +38,7 @@ Project ini merupakan tahapan Technical Test dari proses seleksi Magang Fullstac
 ### Built With
 
 * ![Laravel]
+* ![PHP]
 * ![MySQL]
 
 ## Diagram
@@ -86,5 +87,6 @@ Project ini merupakan tahapan Technical Test dari proses seleksi Magang Fullstac
 <p align="right">(<a href="#readme-top" style="color: black;">back to top</a>)</p>
 
 
-[Laravel]: https://badgen.net/badge/Laravel/v11.17.0?icon=https://cdn.worldvectorlogo.com/logos/laravel-2.svg
+[Laravel]: https://badgen.net/badge/Laravel/v10.48.17?icon=https://cdn.worldvectorlogo.com/logos/laravel-2.svg
+[PHP]: https://badgen.net/badge/PHP/v8.2.4?icon=https://www.php.net/images/logos/new-php-logo.svg
 [MySQL]: https://badgen.net/badge/MySQL/v8.2.4?icon=https://cdn.worldvectorlogo.com/logos/mysql-3.svg
