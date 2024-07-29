@@ -48,6 +48,12 @@ Project ini merupakan tahapan Technical Test dari proses seleksi Magang Fullstac
 
 #### Activity Diagram
 
+1. Menambahkan Request <br>
+   <img src="public/diagrams/AddRequest_ActivityDiagram.png" alt="" height=""> <br>
+2. Merespons Request <br>
+   <img src="public/diagrams/RequestResponse_ActivityDiagram.png" alt="" height=""> <br>
+   
+
 <p align="right">(<a href="#readme-top" style="color: black;">back to top</a>)</p>
 
 ## How To Use
