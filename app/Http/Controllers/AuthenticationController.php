@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class AuthenticationController extends Controller
 {
     public function showLoginForm() {
-        return redirect()->route('login_form');
+        return view('login');
     }
 
     public function login(Request $request) : RedirectResponse {
@@ -32,6 +32,6 @@ class AuthenticationController extends Controller
 
     public function logout(Request $request) : RedirectResponse {
         Auth::logout();
-        return redirect()->intended('');
+        return redirect()->route('login_form');
     }
 }

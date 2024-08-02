@@ -20,9 +20,9 @@ use App\Http\Controllers\ActivityLogsController;
 |
 */
 
-Route::get('/', function () {
-    return view('login');
-});
+// Route::get('/', function () {
+//     return view('login');
+// });
 
 Route::get('/login', [AuthenticationController::class, 'showLoginForm'])->name('login_form');
 Route::post('login', [AuthenticationController::class, 'login'])->name('login');
